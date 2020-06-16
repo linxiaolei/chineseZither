@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.WorkspaceMapper" >
+ 
+
+  
+    <select id="selectById" resultType="com.system.po.Workspace"
+	parameterType="int">
+	select * from workspace where wId=#{id}
+   </select>
+   <update id="updateData" parameterType="com.system.po.Workspace" >
+   update workspace
+    set wId = #{wId,jdbcType=INTEGER},
+      wIntro = #{wIntro,jdbcType=VARCHAR},
+      wObject = #{wObject,jdbcType=VARCHAR},
+      wSchema = #{wSchema,jdbcType=VARCHAR},
+      wRemind = #{wRemind,jdbcType=VARCHAR},
+      wAddress = #{wAddress,jdbcType=VARCHAR},
+      wPhone = #{wPhone,jdbcType=VARCHAR},
+      gContent = #{gContent,jdbcType=VARCHAR},
+      gTime = #{gTime,jdbcType=VARCHAR},
+      gAddress = #{gAddress,jdbcType=VARCHAR},
+      gRemind = #{gRemind,jdbcType=VARCHAR}
+      where wId=#{wId}
+  </update>
+
+</mapper>

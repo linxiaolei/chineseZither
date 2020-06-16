@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.OrderMapper" >
+ 
+  <insert id="insertData" parameterType="com.system.po.Order" >
+	insert into od(oId,orderId,productId,productNum,productIntro,create_time,openId)
+	values(
+	#{oId,jdbcType=INTEGER},
+	#{orderId,jdbcType=VARCHAR},
+	#{productId,jdbcType=INTEGER},
+	#{productNum,jdbcType=INTEGER},
+	#{productIntro,jdbcType=VARCHAR},
+	now(),
+	#{openId,jdbcType=VARCHAR}
+	)
+</insert>
+<select id="selectAll" resultType="com.system.po.Order" parameterType="com.system.po.Order" >
+  	select * from od
+   </select>
+   <delete id="deleteById" parameterType="int">
+   		delete from od where oId=#{id}
+   
+   </delete>
+</mapper>
