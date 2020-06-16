@@ -1,4 +1,4 @@
-# examination_system
+
 这是个基于SSM+Bootstrap的基于微信公众号的琴行系统。
 
 做了关于数据库的增删改查练习。
